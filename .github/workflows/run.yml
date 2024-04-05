@@ -82,7 +82,7 @@ jobs:
           wget https://github.com/SagerNet/sing-box/releases/download/v1.8.0-alpha.1/sing-box-1.8.0-alpha.1-linux-amd64.tar.gz -O sing-box.tar.gz && tar zxvf sing-box.tar.gz && mv sing-box-1.8.0-alpha.1-linux-amd64/sing-box ./ && rm -r sing-box-1.8.0-alpha.1-linux-amd64
           wget https://github.com/IrineSistiana/mosdns/releases/download/v4.5.3/mosdns-linux-amd64.zip -O mosdns.zip && unzip mosdns.zip
           chmod 755 mosdns sing-box convert.sh && ./convert.sh
-          rm mosdns* sing-box* convert.sh geoip.dat geosite.db LICENSE README.md config.yaml
+          rm mosdns* sing-box* convert.sh geosite.db LICENSE README.md config.yaml
 
       - name: Move and zip files
         run: |
