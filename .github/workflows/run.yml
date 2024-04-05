@@ -76,9 +76,9 @@ jobs:
         env:
           NO_SKIP: true
         run: |
-          mkdir -p ./sing-rule/geo-lite
-          cp ./geosite-lite.db ./sing-rule/geo-lite/geosite.db && cp ./resouces/convert.sh ./sing-rule/geo-lite/ 
-          cd ./sing-rule/geo-lite
+          mkdir -p ./sing-rule
+          cp ./geosite-lite.db ./sing-rule/geosite.db && cp ./resouces/convert.sh ./sing-rule/
+          cd ./sing-rule
           wget https://github.com/SagerNet/sing-box/releases/download/v1.8.0-alpha.1/sing-box-1.8.0-alpha.1-linux-amd64.tar.gz -O sing-box.tar.gz && tar zxvf sing-box.tar.gz && mv sing-box-1.8.0-alpha.1-linux-amd64/sing-box ./ && rm -r sing-box-1.8.0-alpha.1-linux-amd64
           wget https://github.com/IrineSistiana/mosdns/releases/download/v4.5.3/mosdns-linux-amd64.zip -O mosdns.zip && unzip mosdns.zip
           chmod 755 mosdns sing-box convert.sh && ./convert.sh
