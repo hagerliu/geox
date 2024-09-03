@@ -35,6 +35,12 @@ jobs:
           repository: v2fly/domain-list-community
           path: community
 
+      - name: Checkout MetaCubeX/meta-rules-converter
+        uses: actions/checkout@v4
+        with:
+          repository: MetaCubeX/meta-rules-converter
+          path: convert
+
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
@@ -77,12 +83,8 @@ jobs:
           NO_SKIP: true
         run: |
           mkdir -p ./sing-rule
-          cp ./geosite-lite.db ./sing-rule/geosite.db && cp ./resouces/convert.sh ./sing-rule/
-          cd ./sing-rule
-          wget https://github.com/SagerNet/sing-box/releases/download/v1.8.0-alpha.1/sing-box-1.8.0-alpha.1-linux-amd64.tar.gz -O sing-box.tar.gz && tar zxvf sing-box.tar.gz && mv sing-box-1.8.0-alpha.1-linux-amd64/sing-box ./ && rm -r sing-box-1.8.0-alpha.1-linux-amd64
-          wget https://github.com/IrineSistiana/mosdns/releases/download/v4.5.3/mosdns-linux-amd64.zip -O mosdns.zip && unzip mosdns.zip
-          chmod 755 mosdns sing-box convert.sh && ./convert.sh
-          rm mosdns* sing-box* convert.sh geosite.db LICENSE README.md config.yaml
+          cd convert
+          go run ./ geosite -f ../community/geosite-lite.dat -o ../sing-rule -t sing-box
 
       - name: Move and zip files
         run: |
