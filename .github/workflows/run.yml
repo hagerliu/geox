@@ -82,9 +82,9 @@ jobs:
         env:
           NO_SKIP: true
         run: |
-          mkdir -p ./sing-rule
+          mkdir -p ./sing-rule/geosite
           cd convert
-          go run ./ geosite -f ../community/geosite-lite.dat -o ../sing-rule -t sing-box
+          go run ./ geosite -f ../community/geosite-lite.dat -o ../sing-rule/geosite -t sing-box
 
       - name: Move and zip files
         run: |
