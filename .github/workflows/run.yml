@@ -63,7 +63,7 @@ jobs:
 
           curl -sSL https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Apple/Apple_Domain.yaml | grep - | sed "s/  - '+.//g" | sed "s/  - '/full:/g" | grep -v "#" | grep -v "acg.rip" | sed "s/'//g" > ./data-lite/apple
           curl -sSL https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/AdGuardSDNSFilter/AdGuardSDNSFilter_Domain.yaml | grep - | sed "s/  - '+.//g" | sed "s/  - '/full:/g" | grep -v "#" | grep -v "acg.rip" | sed "s/'//g" > ./data-lite/antiad
-          curl -sSL https://github.com/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/ChinaMaxNoIP/ChinaMaxNoIP_Domain.yaml | grep - | sed "s/  - '+.//g" | sed "s/  - '/full:/g" | grep -v "#" | grep -v "acg.rip" | sed "s/'//g" > ./data-lite/cn
+          curl -sSL https://github.com/blackmatrix7/ios_rule_script/raw/refs/heads/master/rule/Clash/ChinaMax/ChinaMax_Domain.yaml | grep - | sed "s/  - '+.//g" | sed "s/  - '/full:/g" | grep -v "#" | grep -v "acg.rip" | sed "s/'//g" > ./data-lite/cn
           curl -sSL https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/GlobalMedia/GlobalMedia_Domain.yaml | grep - | sed "s/  - '+.//g" | sed "s/  - '/full:/g" | grep -v "#" | grep -v "acg.rip" | sed "s/'//g" > ./data-lite/proxymedia
           curl -sSL https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/Microsoft/Microsoft.yaml | ${{ env.SED }} > ./data-lite/microsoft
           curl -sSL https://github.com/blackmatrix7/ios_rule_script/raw/master/rule/Clash/OpenAI/OpenAI.yaml | ${{ env.SED }} > ./data-lite/openai
